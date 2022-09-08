@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ApiUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('apiusers')->group(function () {
+    Route::get('/', [ApiUserController::class, 'jsonIndex']);
+    Route::get('/xml', [ApiUserController::class, 'xmlIndex']);
 });
