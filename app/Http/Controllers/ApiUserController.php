@@ -19,11 +19,27 @@ use App\Repositories\ApiUsers\UserRepositoryInterface;
 class ApiUserController extends Controller
 {
 
+     /**
+     * Variable to hold injected dependency
+     */
+
     private $repository;
+
+    /**
+     * 
+     * Initializing the instances and variables
+     *
+     */
   
     public function __construct(UserRepositoryInterface $userRepository){
       $this->repository = $userRepository;
     }
+
+    /**
+     * 
+     *  get json data from api  
+     * 
+     */
 
     public function jsonIndex()
     {
@@ -41,6 +57,12 @@ class ApiUserController extends Controller
         }
         
     }
+
+    /**
+     * 
+     * get xml data from api 
+     * 
+     */
 
     public function xmlIndex()
     {

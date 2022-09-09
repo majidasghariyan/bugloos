@@ -18,7 +18,7 @@ use App\Classes\TeamXMLData;
 
 class UserRepository implements UserRepositoryInterface
 {
-    
+   //save json data in database 
     public function createUserJson($response)
     {
 
@@ -39,6 +39,7 @@ class UserRepository implements UserRepositoryInterface
         DB::commit();
     }
 
+    //save xml data in database
     public function createUserXml($response)
     {
 
